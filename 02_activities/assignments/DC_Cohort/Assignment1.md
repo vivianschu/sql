@@ -7,11 +7,11 @@
 * Weight: 30% of total grade
 * The branch name for your repo should be: `assignment-one`
 * What to submit for this assignment:
-    * This markdown (Assignment1.md) with written responses in Section 4
-    * One Entity-Relationship Diagram (preferably in a pdf, jpeg, png format).
-    * One .sql file 
+	* This markdown (Assignment1.md) with written responses in Section 4
+	* One Entity-Relationship Diagram (preferably in a pdf, jpeg, png format).
+	* One .sql file 
 * What the pull request link should look like for this assignment: `https://github.com/<your_github_username>/sql/pulls/<pr_id>`
-    * Open a private window in your browser. Copy and paste the link to your pull request into the address bar. Make sure you can see your pull request properly. This helps the technical facilitator and learning support staff review your submission easily.
+	* Open a private window in your browser. Copy and paste the link to your pull request into the address bar. Make sure you can see your pull request properly. This helps the technical facilitator and learning support staff review your submission easily.
 
 Checklist:
 - [ ] Create a branch called `assignment-one`.
@@ -107,6 +107,9 @@ Please do not pick the exact same tables that I have already diagrammed. For exa
 - The column names can be found in a few spots (DB Schema window in the bottom right, the Database Structure tab in the main window by expanding each table entry, at the top of the Browse Data tab in the main window)
 
 ***
+I have created a sample logical data model for the `customer` and `customer_purchases` tables: 
+
+![vc_logical-data-model.png](./images/vc_logical-data-model.png)
 
 ## Section 2:
 You can start this section following *session 2*.
@@ -199,7 +202,7 @@ Steps to complete this part of the assignment:
 ### Ethics
 
 Read: Qadri, R. (2021, November 11). _When Databases Get to Define Family._  Wired. <br>
-    https://www.wired.com/story/pakistan-digital-database-family-design/
+	https://www.wired.com/story/pakistan-digital-database-family-design/
 
 Link if you encounter a paywall: https://archive.is/srKHV or https://web.archive.org/web/20240422105834/https://www.wired.com/story/pakistan-digital-database-family-design/
 
@@ -209,5 +212,10 @@ Consider, for example, concepts of fariness, inequality, social structures, marg
 
 
 ```
-Your thoughts...
+Government and official forms have used the concept of "family" as a unit for a long time. Databases and data systems have historically been designed with specific value systems and assumptions about what comprises of a family.For example, many databases may assume a traditional nuclear family structure, which can marginalize or exclude non-traditional family arrangements such as single-parent households, such as forms that ask for 'Mother' and 'Father' vs. 'Parent 1' and 'Parent 2'. This may inaccurately represent the diversity of family strucutres in society, causing 
+issues of fairness and inequality.
+
+Secondly, school enrollment systems might assume that students have two married parents who share the same last name/live at the same address. This wouldn't include blended families, shared custody, or multigenerational households.
+
+Lastly, hospital patient portals typically allow only one "emergency contact" and one "authorized person" to access records. Similar to the previous examples, this would again not apply to blended families, divorced parents who share custody, or multigenerational households in which multiple people share equal responsibility for a patient's care. For example, if a database only recognizes certain family structures, it may exclude people who do not fit those structures, such as single-parent families or families with non-binary parents. This can have real-world consequences, such as difficulty accessing services or benefits designed for traditional family structures.
 ```
