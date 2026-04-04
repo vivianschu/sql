@@ -7,8 +7,8 @@
 /* 1. Write a query that returns everything in the customer table. */
 --QUERY 1
 
-
-
+SELECT * 
+FROM customer;
 
 --END QUERY
 
@@ -17,8 +17,10 @@
 sorted by customer_last_name, then customer_first_ name. */
 --QUERY 2
 
-
-
+SELECT *
+FROM customer
+ORDER BY customer_last_name, customer_first_name
+LIMIT 10;
 
 --END QUERY
 
@@ -28,8 +30,11 @@ sorted by customer_last_name, then customer_first_ name. */
 Limit to 25 rows of output. */
 --QUERY 3
 
-
-
+SELECT *
+FROM customer_purchases
+WHERE product_id = 4
+	OR product_id = 9
+LIMIT 25;
 
 --END QUERY
 
@@ -43,8 +48,12 @@ Limit to 25 rows of output.
 */
 --QUERY 4
 
-
-
+SELECT *,
+	quantity * cost_to_customer_per_qty AS price
+FROM customer_purchases
+WHERE customer_id >= 8 
+	AND customer_id <= 10
+LIMIT 25;
 
 --END QUERY
 
@@ -56,8 +65,11 @@ columns and add a column called prod_qty_type_condensed that displays the word �
 if the product_qty_type is “unit,” and otherwise displays the word “bulk.” */
 --QUERY 5
 
-
-
+SELECT product_id, product_name,
+	CASE WHEN product_qty_type = 'unit' THEN 'unit'
+		ELSE 'bulk'
+	END AS prod_qty_type_condensed
+FROM product;
 
 --END QUERY
 
@@ -67,8 +79,14 @@ add a column to the previous query called pepper_flag that outputs a 1 if the pr
 contains the word “pepper” (regardless of capitalization), and otherwise outputs 0. */
 --QUERY 6
 
-
-
+SELECT product_id, product_name,
+	CASE WHEN product_qty_type = 'unit' THEN 'unit'
+		ELSE 'bulk'
+	END AS prod_qty_type_condensed,
+	CASE WHEN LOWER(product_name) LIKE '%pepper%' THEN 1
+		ELSE 0
+	END AS pepper_flag
+FROM product;
 
 --END QUERY
 
@@ -79,8 +97,13 @@ vendor_id field they both have in common, and sorts the result by market_date, t
 Limit to 24 rows of output. */
 --QUERY 7
 
+SELECT *
+FROM vendor
 
-
+INNER JOIN vendor_booth_assignments
+	ON vendor.vendor_id = vendor_booth_assignments.vendor_id
+ORDER BY market_date, vendor_name
+LIMIT 24;
 
 --END QUERY
 
