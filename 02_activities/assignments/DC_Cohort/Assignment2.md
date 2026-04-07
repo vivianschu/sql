@@ -47,12 +47,12 @@ There are several tools online you can use, I'd recommend [Draw.io](https://www.
 
 **HINT:** You do not need to create any data for this prompt. This is a conceptual model only. 
 
-![assignment2-prompt1.png](/Users/vivianschu/repos/DSI/sql/02_activities/assignments/DC_Cohort/images/assignment2-prompt1.png)
+![assignment2-prompt1.png](./images/assignment2-prompt1.png)
 
 #### Prompt 2
 We want to create employee shifts, splitting up the day into morning and evening. Add this to the ERD.
 
-![assignment2-prompt2.png](/Users/vivianschu/repos/DSI/sql/02_activities/assignments/DC_Cohort/images/assignment2-prompt2.png)
+![assignment2-prompt2.png](./images/assignment2-prompt2.png)
 
 #### Prompt 3
 The store wants to keep customer addresses. Propose two architectures for the CUSTOMER_ADDRESS table, one that will retain changes, and another that will overwrite. Which is type 1, which is type 2? 
