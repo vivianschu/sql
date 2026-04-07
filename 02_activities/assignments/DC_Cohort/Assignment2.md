@@ -201,5 +201,9 @@ Consider, for example, concepts of labour, bias, LLM proliferation, moderating c
 
 
 ```
-Your thoughts...
+Boykis's article makes a compelling argument that the systems we create (e.g., LLMs, automation), are built on enormous amounts of human labour. Systems that were built using the invisible labour of thousands, shaped by the assumptions of a relative few, are presented to the world as objective and autonomous.
+
+Most of this labour is hidden. For instance, workers at Amazon Mechanical Turk labelled training data for fractions of a cent per task without job security or recognition. As a result, modern AI presents a more polished, automated face while masking human labour, which is exploitative by design wherethe most tedious cognitive work is outsourced to economically vulnerable people while profits flow to the platforms deploying the resulting models.
+
+Since training data is built by people, it also carries their assumptions and blind spots. Boykis traces this back to the Brown Corpus of the 1960s, which is a dataset compiled from newspapers of the era - whose biases were inherited by WordNet then ImageNet, then the neural networks powering facial recognition today. ImageNet Roulette labelled real people with offensive terms drawn directly from how the dataset had been categorized.
 ```
