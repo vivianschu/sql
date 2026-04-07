@@ -60,7 +60,13 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+Type 1 - Overwrite (no history)
+In this architecture, the CUSTOMER_ADDRESS table would have a single row for each customer, and any changes to the customer's address would overwrite the existing record. This approach is simpler and requires less storage space, but it does not retain any history of address changes. 
+
+Type 2 - Retain History
+In this architecture, the CUSTOMER_ADDRESS table would create a new record/row for each address change, allowing us to retain the history of customer addresses. This approach is more complex and requires additional tables to manage the historical data.
+To get a customer's current address: `WHERE customer_id = ? AND is_current = true`.
+To get what their address was on a past date: `WHERE customer_id = ? AND effective_date <= ? AND (expiry_date > ? OR expiry_date IS NULL)`
 ```
 
 ***
