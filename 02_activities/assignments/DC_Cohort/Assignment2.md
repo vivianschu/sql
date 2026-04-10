@@ -47,8 +47,12 @@ There are several tools online you can use, I'd recommend [Draw.io](https://www.
 
 **HINT:** You do not need to create any data for this prompt. This is a conceptual model only. 
 
+![assignment2-prompt1.png](./images/assignment2-prompt1.png)
+
 #### Prompt 2
 We want to create employee shifts, splitting up the day into morning and evening. Add this to the ERD.
+
+![assignment2-prompt2.png](./images/assignment2-prompt2.png)
 
 #### Prompt 3
 The store wants to keep customer addresses. Propose two architectures for the CUSTOMER_ADDRESS table, one that will retain changes, and another that will overwrite. Which is type 1, which is type 2? 
@@ -56,7 +60,13 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+Type 1 - Overwrite (no history)
+In this architecture, the CUSTOMER_ADDRESS table would have a single row for each customer, and any changes to the customer's address would overwrite the existing record. This approach is simpler and requires less storage space, but it does not retain any history of address changes. 
+
+Type 2 - Retain History
+In this architecture, the CUSTOMER_ADDRESS table would create a new record/row for each address change, allowing us to retain the history of customer addresses. This approach is more complex and requires additional tables to manage the historical data.
+To get a customer's current address: `WHERE customer_id = ? AND is_current = true`.
+To get what their address was on a past date: `WHERE customer_id = ? AND effective_date <= ? AND (expiry_date > ? OR expiry_date IS NULL)`
 ```
 
 ***
@@ -191,5 +201,9 @@ Consider, for example, concepts of labour, bias, LLM proliferation, moderating c
 
 
 ```
-Your thoughts...
+Boykis's article makes a compelling argument that the systems we create (e.g., LLMs, automation), are built on enormous amounts of human labour. Systems that were built using the invisible labour of thousands, shaped by the assumptions of a relative few, are presented to the world as objective and autonomous.
+
+Most of this labour is hidden. For instance, workers at Amazon Mechanical Turk labelled training data for fractions of a cent per task without job security or recognition. As a result, modern AI presents a more polished, automated face while masking human labour, which is exploitative by design wherethe most tedious cognitive work is outsourced to economically vulnerable people while profits flow to the platforms deploying the resulting models.
+
+Since training data is built by people, it also carries their assumptions and blind spots. Boykis traces this back to the Brown Corpus of the 1960s, which is a dataset compiled from newspapers of the era - whose biases were inherited by WordNet then ImageNet, then the neural networks powering facial recognition today. ImageNet Roulette labelled real people with offensive terms drawn directly from how the dataset had been categorized.
 ```
